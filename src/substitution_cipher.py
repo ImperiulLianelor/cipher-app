@@ -14,7 +14,7 @@ class SubstitutionCipher:
             key = 'qwertyuiopasdfghjklzxcvbnm'
         
         # Validate key
-        if len(key) != 26 or not all(c in string.ascii_lowercase for c in key):
+        if len(key) != 26 or not all(c in string.ascii_lowercase for c in key) or len(set(key)) != 26:
             raise ValueError("Key must be a permutation of 26 lowercase letters")
         
         # Create substitution mapping
