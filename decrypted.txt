@@ -1,0 +1,4 @@
+the quick brown fox jumps over the lazy dog.
+this sample text contains all 26 letters of the english alphabet.
+it is commonly used for testing font displays and cryptography algorithms.
+1234567890 !@#$%^&*() special characters should be handled appropriately.
