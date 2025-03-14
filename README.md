@@ -20,20 +20,17 @@ A command-line application that implements classic ciphering algorithms for encr
 cipher_app/
 ├── src/                    # Core cipher implementations
 │   ├── __init__.py
+│   ├── main.py
 │   ├── substitution_cipher.py
 │   ├── transposition_cipher.py
 │   └── cipher_utils.py
-├── main.py                 # Command-line interface
 ├── tests/                  # Unit tests
 │   ├── __init__.py
 │   ├── test_substitution_cipher.py
 │   ├── test_transposition_cipher.py
 │   └── test_cli.py
-└── sample_inputs/          # Sample test files
-    ├── plaintext_sample.txt
-    └── encrypted_samples/
-        ├── substitution_sample.txt
-        └── transposition_sample.txt
+└── sample/          # Sample test files
+    ├── input.txt
 ```
 
 ## Installation
@@ -51,7 +48,7 @@ No additional installation is required as the application uses Python's standard
 ### Basic Command Format
 
 ```
-python main.py [OPTIONS]
+python3 -m src.main [OPTIONS]
 ```
 
 ### Required Arguments
@@ -69,29 +66,29 @@ python main.py [OPTIONS]
 
 **Encryption with Substitution Cipher**:
 ```
-python main.py -e -f sample_inputs/plaintext_sample.txt -o encrypted_output.txt -c substitution
+python3 -m src.main -e -f sample/input.txt -o encrypted.txt -c substitution
 ```
 
 **Decryption with Substitution Cipher**:
 ```
-python main.py -d -f encrypted_output.txt -o decrypted_output.txt -c substitution
+python3 -m src.main -d -f encrypted.txt -o decrypted.txt -c substitution
 ```
 
 **Encryption with Transposition Cipher**:
 ```
-python main.py -e -f sample_inputs/plaintext_sample.txt -o encrypted_output.txt -c transposition
+python3 -m src.main -e -f sample/input.txt -o encrypted.txt -c transposition
 ```
 
 **Decryption with Transposition Cipher**:
 ```
-python main.py -d -f encrypted_output.txt -o decrypted_output.txt -c transposition
+python3 -m src.main -d -f encrypted.txt -o decrypted.txt -c transposition
 ```
 
 **Flexible Argument Order** (all of these are equivalent):
 ```
-python main.py -e -f input.txt -o output.txt -c substitution
-python main.py -f input.txt -e -o output.txt -c substitution
-python main.py -c substitution -e -f input.txt -o output.txt
+python3 -m src.main -e -f input.txt -o output.txt -c substitution
+python3 -m src.main -f input.txt -e -o output.txt -c substitution
+python3 -m src.main -c substitution -e -f input.txt -o output.txt
 ```
 
 ## Implementation Details
@@ -114,12 +111,12 @@ python main.py -c substitution -e -f input.txt -o output.txt
 
 To run all tests:
 ```
-python -m unittest discover -s tests
+python3 -m unittest discover -s tests
 ```
 
 To run a specific test file:
 ```
-python -m unittest tests/test_substitution_cipher.py
+python3 -m unittest tests/test_substitution_cipher.py
 ```
 
 ## Example Test Cases
